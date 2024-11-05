@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import memberRoutes from "./routes/members.js";
+import authRoute from "./routes/auth.js";
 import presentRoutes from "./routes/present.js";
 import absentRoutes from "./routes/absent.js";
 import cors from "cors";
@@ -32,11 +33,12 @@ mongoose.connection.on("connected", () => {
   console.log("mongoDB connected");
 });
 
+app.use("/api/auth", authRoute);
 app.use("/api/member", memberRoutes);
 app.use("/api/presentMem", presentRoutes);
 app.use("/api/absent", absentRoutes);
 
-app.listen(process.env.PORT || 7000, () => {
+app.listen(7000, () => {
   connect();
   console.log("connected to backend");
 });
