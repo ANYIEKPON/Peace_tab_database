@@ -19,14 +19,12 @@ const MembersSchema = new mongoose.Schema(
     },
     address: {
       type: String,
-      required: true,
     },
     bus_stop: {
       type: String,
     },
     birth_day: {
       type: String,
-      required: true,
     },
     worker: {
       type: String,
@@ -45,7 +43,6 @@ const MembersSchema = new mongoose.Schema(
     },
     profession: {
       type: String,
-      required: true,
     },
     new_member: {
       type: String,
